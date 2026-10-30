@@ -1,0 +1,116 @@
+{
+  "data": [
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 1,
+      "order": 1,
+      "validationGroupName": "Invoice Vs PO Validation",
+      "validationGroupStatus": "Matched",
+      "fieldData": [
+        { "fieldId": 1, "fieldName": "Invoice Number", "fieldValue": "INV-1001", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 101, "comment": "Auto-verified successfully" },
+        { "fieldId": 2, "fieldName": "PO Number", "fieldValue": "PO-567", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 102, "comment": "" },
+        { "fieldId": 3, "fieldName": "Currency", "fieldValue": "INR", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 103, "comment": "" },
+        { "fieldId": 4, "fieldName": "Document Date", "fieldValue": "2026-04-01", "status": "Matched", "isAutofilled": "N", "isVerified": "Y", "fieldMappingId": 104, "comment": "Manually verified" },
+        { "fieldId": 5, "fieldName": "Item / Service Description", "fieldValue": "Software License", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 105, "comment": "" },
+        { "fieldId": 6, "fieldName": "Line Amount", "fieldValue": "12500", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 106, "comment": "" },
+        { "fieldId": 7, "fieldName": "Quantity", "fieldValue": "5", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 107, "comment": "" },
+        { "fieldId": 8, "fieldName": "Unit Price", "fieldValue": "2500", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 108, "comment": "" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 2,
+      "order": 2,
+      "validationGroupName": "Invoice Vs PO Vs GRN Validation",
+      "validationGroupStatus": "Not Matched",
+      "fieldData": [
+        { "fieldId": 9, "fieldName": "Invoice Number", "fieldValue": "INV-1001", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 201, "comment": "" },
+        { "fieldId": 10, "fieldName": "PO Number", "fieldValue": "PO-567", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 202, "comment": "" },
+        { "fieldId": 11, "fieldName": "Currency", "fieldValue": "INR", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 203, "comment": "" },
+        { "fieldId": 12, "fieldName": "Item Description", "fieldValue": "Software License", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 204, "comment": "" },
+        { "fieldId": 13, "fieldName": "Line Amount", "fieldValue": "12000", "status": "Not Matched", "isAutofilled": "Y", "isVerified": "N", "fieldMappingId": 205, "comment": "Amount mismatch - GRN shows 12500" },
+        { "fieldId": 14, "fieldName": "Quantity", "fieldValue": "5", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 206, "comment": "" },
+        { "fieldId": 15, "fieldName": "Unit Price", "fieldValue": "2400", "status": "Not Matched", "isAutofilled": "Y", "isVerified": "N", "fieldMappingId": 207, "comment": "Unit price differs from PO - needs review" },
+        { "fieldId": 16, "fieldName": "GRN Validation", "fieldValue": "Failed", "status": "Not Matched", "isAutofilled": "N", "isVerified": "N", "fieldMappingId": 208, "comment": "GRN not received" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 3,
+      "order": 3,
+      "validationGroupName": "Invoice Vs PO Vs Invoice History Validation",
+      "validationGroupStatus": "Review Pending",
+      "fieldData": [
+        { "fieldId": 17, "fieldName": "Validation Result", "fieldValue": "Duplicate Found", "status": "Not Matched", "isAutofilled": "N", "isVerified": "N", "fieldMappingId": 301, "comment": "Possible duplicate of INV-0989, pending review" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 4,
+      "order": 4,
+      "validationGroupName": "GSTIN Validation",
+      "validationGroupStatus": "Matched",
+      "fieldData": [
+        { "fieldId": 18, "fieldName": "GSTIN", "fieldValue": "29ABCDE1234F1Z5", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 401, "comment": "" },
+        { "fieldId": 19, "fieldName": "Name", "fieldValue": "XYZ Traders", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 402, "comment": "" },
+        { "fieldId": 20, "fieldName": "State Code", "fieldValue": "29", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 403, "comment": "" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 5,
+      "order": 5,
+      "validationGroupName": "E Invoice Validation",
+      "validationGroupStatus": "Matched",
+      "fieldData": [
+        { "fieldId": 21, "fieldName": "IRN Status", "fieldValue": "Generated", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 501, "comment": "IRN generated and validated" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 6,
+      "order": 6,
+      "validationGroupName": "QR Validation",
+      "validationGroupStatus": "Matched",
+      "fieldData": [
+        { "fieldId": 22, "fieldName": "Invoice Number", "fieldValue": "INV-1001", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 601, "comment": "" },
+        { "fieldId": 23, "fieldName": "Supplier GSTIN", "fieldValue": "29ABCDE1234F1Z5", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 602, "comment": "" },
+        { "fieldId": 24, "fieldName": "Invoice Date", "fieldValue": "2026-04-01", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 603, "comment": "" },
+        { "fieldId": 25, "fieldName": "Invoice Amount", "fieldValue": "12500", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 604, "comment": "QR scanned and amount verified" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 7,
+      "order": 7,
+      "validationGroupName": "MSME Validation",
+      "validationGroupStatus": "Review Pending",
+      "fieldData": [
+        { "fieldId": 26, "fieldName": "Vendor MSME Status", "fieldValue": "Unknown", "status": "Not Matched", "isAutofilled": "N", "isVerified": "N", "fieldMappingId": 701, "comment": "MSME certificate not on file, awaiting vendor response" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 8,
+      "order": 8,
+      "validationGroupName": "Tax Validation",
+      "validationGroupStatus": "Matched",
+      "fieldData": [
+        { "fieldId": 27, "fieldName": "Tax Validation", "fieldValue": "Correct", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 801, "comment": "GST rate and amount correct" }
+      ]
+    },
+    {
+      "filePath": "/docs/invoice_001.pdf",
+      "validationGroupId": 9,
+      "order": 9,
+      "validationGroupName": "Vendor Master Validation",
+      "validationGroupStatus": "Not Matched",
+      "fieldData": [
+        { "fieldId": 28, "fieldName": "Vendor Status", "fieldValue": "Inactive", "status": "Not Matched", "isAutofilled": "Y", "isVerified": "N", "fieldMappingId": 901, "comment": "Vendor marked inactive in system - check with procurement" },
+        { "fieldId": 29, "fieldName": "Vendor Name", "fieldValue": "XYZ Traders", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 902, "comment": "" },
+        { "fieldId": 30, "fieldName": "GSTIN", "fieldValue": "29ABCDE1234F1Z5", "status": "Matched", "isAutofilled": "Y", "isVerified": "Y", "fieldMappingId": 903, "comment": "" },
+        { "fieldId": 31, "fieldName": "Bank Details and Payment Terms", "fieldValue": "Net 30 Days", "status": "Not Matched", "isAutofilled": "N", "isVerified": "N", "fieldMappingId": 904, "comment": "Bank details outdated, needs update" }
+      ]
+    }
+  ]
+}

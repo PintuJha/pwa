@@ -1,0 +1,52 @@
+{
+  "message": "RPA Docs Validation Data Fetched Successfully",
+  "status": "success",
+  "messageCode": 200,
+  "data": [
+    {
+      "companyName": "MTC-Noida",
+      "stagingDate": "2026-04-05T10:30:00Z",
+      "fileName": "invoice_001.pdf",
+      "docType": "Invoice",
+      "partyName": "XYZ Traders",
+      "docNo": "INV-1001",
+      "docDate": "2026-04-01",
+      "amount": 12500.75,
+      "invoiceId": 1001,
+      "systemFileName": "SYS_INV_1001.pdf",
+      "siteId": 1,
+      "fileStatus": "Uploaded",
+      "docValidationStatus": "Pending"
+    },
+    {
+      "companyName": "MTC-HYD",
+      "stagingDate": "2026-04-04T14:15:00Z",
+      "fileName": "po_245.pdf",
+      "docType": "Credit Note",
+      "partyName": "Global Supplies",
+      "docNo": "PO-245",
+      "docDate": "2026-03-30",
+      "amount": 45800.00,
+      "invoiceId": 245,
+      "systemFileName": "SYS_PO_245.pdf",
+      "siteId": 2,
+      "fileStatus": "Processed",
+      "docValidationStatus": "Pending"
+    },
+    {
+      "companyName": "MTC-Noida",
+      "stagingDate": "2026-04-03T09:00:00Z",
+      "fileName": "bill_789.pdf",
+      "docType": "Debit Note",
+      "partyName": "ABC Services",
+      "docNo": "BILL-789",
+      "docDate": "2026-04-02",
+      "amount": 9800.50,
+      "invoiceId": 789,
+      "systemFileName": "SYS_BILL_789.pdf",
+      "siteId": 3,
+      "fileStatus": "Failed",
+      "docValidationStatus": "Completed"
+    }
+  ]
+}

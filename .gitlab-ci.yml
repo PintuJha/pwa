@@ -1,0 +1,15 @@
+stages:
+  - build
+  - deploy
+
+
+build_angular:
+  stage: build
+  image: node:16  # or node:18, node:20 depending on your Angular version
+  script:
+    - npm install
+    - npm run build -- --prod
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour

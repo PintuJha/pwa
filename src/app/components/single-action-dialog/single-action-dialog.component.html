@@ -1,0 +1,17 @@
+<div class="add_language_model" cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragBoundary=".cdk-overlay-container">
+    <div class="custom_model">
+      <div class="heading" cdkDragHandle style="cursor: move;">
+        <h3> {{ data.title }}</h3>
+      </div>
+      <div class="content">
+        <div class="aditional_lan">
+          <h1 class="sessiontext">{{ data.content }}</h1>
+        </div>
+      </div>
+      <mat-dialog-actions align="end">
+        <div class="login_btn  mt-0">
+          <button mat-button (click)="onClose()">{{ data.buttonText }}</button>
+        </div>
+      </mat-dialog-actions>
+    </div>
+  </div>

@@ -1,0 +1,227 @@
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+
+<header>
+    <mat-toolbar color="primary">
+        <div class="custom_header_box">
+
+            <div class="left_menu_sec">
+
+                <div class="web_logo_toggle_menu">
+                    <button class="pr-0 menu_btn" (click)="toggleMenu()">
+                        <mat-icon>{{ isMenuOpen ? 'menu' : 'menu' }}</mat-icon>
+                    </button>
+                </div>
+
+                <div class="web_logo">
+
+                    <a href="javascript:void(0)">
+                        <svg width="35" height="38" viewBox="15 0 28 50" xmlns="http://www.w3.org/2000/svg">
+                            <polygon points="48.4,14 28,2 7.6,14 7.6,38 28,50 48.4,38" fill="#E8192C" />
+                            <polygon points="43,17.5 28,9 13,17.5 13,34.5 28,43 43,34.5" fill="none"
+                                stroke="rgba(255,255,255,0.45)" stroke-width="1.2" />
+                            <text x="28" y="33" text-anchor="middle" font-family="Calibri,sans-serif" font-size="16"
+                                font-weight="700" fill="white">AP</text>
+                        </svg>
+                        <span class="logo">Accounts Payable System - (APS)</span>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <span class="example-spacer"></span>
+            <div class="profile profile_web">
+
+                <div class="book_icon">
+                    <a mat-menu-item [matTooltip]="isDarkMode ? 'Light Mode' : 'Dark Mode'" (click)="toggleTheme()">
+                        <mat-icon class="mr-0">{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+                    </a>
+                </div>
+
+                @if(email===superAdminEmail || isSwitchToAdminPresent){
+                <div class="book_icon">
+                    <a mat-menu-item matTooltip="Switch to Admin Panel" (click)="switchToAdminPanel()">
+                        <mat-icon class="mr-0">supervised_user_circle</mat-icon>
+                    </a>
+                </div>
+
+                <div class="line"></div>
+                }
+                <div class="profile-icon">
+                    <button mat-menu-item matTooltip="User Profile" [matMenuTriggerFor]="menu">
+                        <img src="../../../assets/img/user.png" width="24" height="24" style="border-radius: 50%;"
+                            alt="Profile" />
+                    </button>
+                    <mat-menu #menu="matMenu">
+
+                        <button aria-label="account_circle" mat-menu-item>
+                            <mat-icon>account_circle</mat-icon>
+                            <span>Welcome {{fullName}}</span>
+                        </button>
+
+                        <button aria-label="lock" mat-menu-item (click)="openDialog()">
+                            <mat-icon>lock</mat-icon>
+                            <span>Change Password</span>
+                        </button>
+
+                        <button aria-label="logout" mat-menu-item routerLink="/login" (click)="getLogoutTime()">
+                            <mat-icon>logout</mat-icon>
+                            <span>Logout</span>
+                        </button>
+
+                    </mat-menu>
+                </div>
+                <div class="line"></div>
+                <div class="book_icon">
+                    <a mat-menu-item matTooltip="Full Screen" (click)="toggleFullscreen()">
+                        <mat-icon class="mr-0">fullscreen</mat-icon>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </mat-toolbar>
+</header>
+
+
+
+<div class="main_container">
+
+
+    <div class="custom-drawer" [class.open]="isMenuOpen">
+        <div class="menu_header">
+            <ul class="menu-list">
+
+                <li *ngFor="let node of menuListJSON" class="menu-item">
+
+                    <!-- Node WITHOUT children -->
+                    <ng-container *ngIf="!hasStaticChild(node)">
+                        <a class="submenu_level" (click)="getbuttonlevelAccess(node.resourceId)"
+                            [routerLink]="node.labelLink" [ngClass]="active == node.resourceId ? 'active' : ''"
+                            matTooltipPosition="right" [matTooltip]="node.toolTipName">
+
+                            <div class="menu">
+                                <div class="sub_menu">
+
+                                    <ng-container *ngIf="!node.iconFileValue">
+                                        <mat-icon class="remove_icon">{{ node.iconCode }}</mat-icon>
+                                    </ng-container>
+
+                                    <ng-container *ngIf="node.iconFileValue">
+                                        <img class="svg_menu_icon" [src]="getSvgDataUrl(node.iconFileValue)"
+                                            alt="{{ node.resourceName }}">
+                                    </ng-container>
+
+                                    <span>{{ node.resourceName }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </ng-container>
+
+
+
+                    <!-- Node WITH children -->
+                    <ng-container *ngIf="hasStaticChild(node)">
+                        <div class="menu_level" matTooltipPosition="right" (click)="toggleNode(node)"
+                            [matTooltip]="node.toolTipName" [ngClass]="isParentActive(node) ? 'menuactive' : ''">
+
+                            <div class="menu">
+                                <div class="sub_menu">
+
+                                    <ng-container *ngIf="!node.iconFileValue">
+                                        <mat-icon class="remove_icon">{{ node.iconCode }}</mat-icon>
+                                    </ng-container>
+
+                                    <ng-container *ngIf="node.iconFileValue">
+                                        <img class="svg_menu_icon" [src]="getSvgDataUrl(node.iconFileValue)"
+                                            alt="{{ node.resourceName }}">
+                                    </ng-container>
+
+                                    <span>{{ node.resourceName }}</span>
+                                </div>
+
+                                <div class="right_arrow">
+                                    <mat-icon>
+                                        {{ isExpanded(node) ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+                                    </mat-icon>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <!-- CHILD LIST -->
+                        <ul *ngIf="isExpanded(node)" class="submenu-list">
+                            <li *ngFor="let child of node.children">
+
+                                <a class="submenu_level" (click)="getbuttonlevelAccess(child.resourceId)"
+                                    [routerLink]="child.labelLink"
+                                    [ngClass]="active == child.resourceId ? 'active' : ''" matTooltipPosition="right"
+                                    [matTooltip]="child.toolTipName">
+
+                                    <div class="sub_menu">
+
+                                        <ng-container *ngIf="!child.iconFileValue">
+                                            <mat-icon class="remove_icon">{{ child.iconCode }}</mat-icon>
+                                        </ng-container>
+
+                                        <ng-container *ngIf="child.iconFileValue">
+                                            <img class="svg_menu_icon" [src]="getSvgDataUrl(child.iconFileValue)"
+                                                alt="{{ child.resourceName }}">
+                                        </ng-container>
+
+                                        <span>{{ child.resourceName }}</span>
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </ng-container>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="content_section" [class.menu-open]="isMenuOpen" [class.menu-close]="!isMenuOpen">
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+
+        <div class="footer">
+            <div class="foo_left">
+                <ul>
+                    <li>Last Visited: {{formattedDate}}</li>
+                    <li>|</li>
+                    <li style="cursor: pointer;" (click)="onReleaseNote()">Version:{{currentVersion}}</li>
+                </ul>
+            </div>
+            <div class="foo_center" style="line-height: 0px;">
+                <img width="100px" alt="proud_to_be_part" src="../../../assets/img/proud_to_be_part.png" />
+            </div>
+            <div class="foo_right">
+                <ul>
+                    <li matTooltip={{bspBestViewTooltip}} class="line-content">Best view on &nbsp;</li>
+                    <li>
+                        <div class="footer_version">
+                            <img width="15px" alt="chrome" src="../../../assets/img/chrome.svg" />
+                            <span>{{chromeVersion}}</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="footer_version">
+                            <img width="15px" alt="edge" src="../../../assets/img/edge.svg" />
+                            <span>{{edgeVersion}}</span>
+                        </div>
+                    </li>
+                    <li>|</li>
+                    <li matTooltip="Visit {{ bspCopyrightUrl }}">© <a href={{bspCopyrightUrl}}>{{bspCopyright}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

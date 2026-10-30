@@ -1,0 +1,194 @@
+// @use '~@angular/material' as mat;
+
+@mixin utility-mixin($theme) {
+    $primary : mat.define-palette(mat.$deep-purple-palette, A400);
+    $accent : mat.define-palette(mat.$amber-palette);
+    $warn : mat.define-palette(mat.$red-palette);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+
+    /*
+    1.) Global Links, Utilities & Buttons
+    -------------------------------------*/
+    * {
+        box-sizing: border-box;
+    }
+  
+    a {
+        transition: 0.3s ease all;
+        text-decoration: none;
+    }
+
+    p{
+        opacity: .75;
+    }
+    .inactive{
+        opacity: .5;
+    }
+    .spacer {
+        flex: 1 1 auto;
+    }
+
+    .example-tooltip-red {
+        background: #b71c1c;
+    }
+  
+
+    .mat-stroked-button:not([disabled]) {
+        border-color: inherit;
+    }
+    .container {
+        width: 100%;
+        max-width: 1270px;
+        margin: 0 auto;
+        padding: 15px 25px;
+    }
+    @keyframes rotate {
+        0% {
+        transform: rotate(0deg)
+        }
+        50% {
+        transform: rotate(-90deg)
+        }
+        100% {
+        transform: rotate(-90deg)
+        }
+    }
+
+
+
+
+    
+    
+    
+
+    /*
+    2.) Colors
+    -------------------------------------*/
+    
+    .primary{
+        color: mat.get-color-from-palette($primary);
+    }
+    .accent{
+        color: mat.get-color-from-palette($accent);
+    }
+    .warn{
+        color: mat.get-color-from-palette($warn);
+    }
+    .text-light{
+        color: mat.get-color-from-palette($background, app-bar);
+    }
+
+
+
+    .color-red {
+        color: #fe3451;
+    }
+    .color-green {
+        color: #02be6e;
+    }
+    .color-blue{
+        color: #2962ff;
+    }
+    .color-orange{
+        color: #ffd400;
+    }
+    .color-violet{
+        color: #c121dc;
+    }
+    .color-aqua{
+        color: #28dcd6;
+    }
+
+
+
+    /*
+    3.) Backgrounds
+    -------------------------------------*/
+    .bg{
+        background: mat.get-color-from-palette($foreground, text);
+    }
+    .bg-app{
+        background: mat.get-color-from-palette($background, app-bar);
+    }
+    .bg-hover{
+        background: mat.get-color-from-palette($background, hover);
+    }
+    .bg-card{
+        background: mat.get-color-from-palette($background, card);
+    }
+    .bg-status{
+        background: mat.get-color-from-palette($background, status-bar);
+    }
+    .bg-primary{
+        background: mat.get-color-from-palette($primary);
+    }
+    .bg-accent{
+        background: mat.get-color-from-palette($accent);
+    }
+    .bg-warn{
+        background: mat.get-color-from-palette($warn);
+    }
+
+
+
+
+    .bg-green {
+        background: #02be6e;
+    }
+    .bg-red {
+        background: #fe3451;
+    }
+
+
+
+    /*
+    4.) Outline
+    -------------------------------------*/
+
+    .outline{
+        border: 1px solid mat.get-color-from-palette($foreground, divider);
+    }
+    .outline-primary{
+        border: 1px solid mat.get-color-from-palette($primary);
+    }
+    .outline-accent{
+        border: 1px solid mat.get-color-from-palette($accent);
+    }
+    .outline-warn{
+        border: 1px solid mat.get-color-from-palette($warn);
+    }
+
+    .dashed{
+        border-style: dashed;
+    }
+
+    .mat-card.anup, .anup{
+        @include mat.elevation(5, #e91e63, 0.8);
+        @include mat.elevation-transition();
+        &:hover{
+            @include mat.elevation(24, #e91e63, 0.8);
+        }
+    }
+    
+    
+
+
+
+
+
+    .mat-form-field{
+        width: 100%;
+    }
+    .mat-radio-group{
+        .mat-radio-button{
+            margin-right: 2rem;
+        }
+    }
+    
+    @media (max-width: 767px) {
+    }
+
+} // utility-mixin (Ends)
+

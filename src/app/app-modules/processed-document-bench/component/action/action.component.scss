@@ -1,0 +1,25 @@
+.action {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    height: 26px;
+
+    a.readme {
+        text-decoration: none;
+        display: flex;
+        background: #f8d0d1;
+        border-radius: 50px;
+           height: 22px;
+    width: 22px;
+        align-items: center;
+        justify-content: center;
+
+        mat-icon {
+            width: 16px;
+            height: 16px;
+            font-size: 16px;
+            color: #e8192c;
+        }
+    }
+}

@@ -1,0 +1,1100 @@
+@import "variable";
+
+
+
+.language_table {
+    overflow-x: auto;
+    padding-bottom: 4px;
+
+    ag-grid-angular {
+        .ag-root-wrapper.ag-layout-normal {
+            border-radius: 0px !important;
+
+
+
+            .ag-root-wrapper-body.ag-layout-normal {
+                .ag-root.ag-layout-normal {
+                    .ag-header {
+                        .headercenter {
+                            .ag-header-cell-label {
+                                justify-content: center;
+                            }
+                        }
+
+                        .ag-header-cell {
+                            background: #cbcbcb;
+                            border-right: 1px solid #ddddde !important;
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                .ag-ltr .ag-cell {
+                    border-right-width: 0px;
+                    border-right: 1px solid #ddddde !important;
+                }
+            }
+        }
+    }
+}
+
+// ========Section Code Start==========
+
+.invoice_box_Sec {
+    padding: 10px 0px;
+
+    .print_box {
+        .print_btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            button.approved {
+                background: #5BAF27;
+                border: 0px solid #5BAF27;
+                color: #FFFFFF;
+                font-family: $fontFamily;
+                font-size: 12px;
+                padding: 8px 18px;
+                font-weight: 500;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+
+            button.approved.reject {
+                background: $bgcolor;
+            }
+        }
+
+        .print_img {
+            width: 100%;
+            height: calc(100vh - 130px);
+            overflow: auto;
+            margin-bottom: 0px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .invoice_accordian_box {
+        // .validation_status {
+        //     display: flex;
+        //     align-items: center;
+
+        //     p.va {
+        //         width: 65%;
+        //     }
+
+        //     p {
+        //         margin: 0px;
+        //         color: #626262;
+        //         font-size: 14px;
+        //         margin-bottom: 8px;
+        //         font-family: $fontFamily;
+        //     }
+        // }
+
+        .accordian {
+            height: calc(100vh - 124px);
+            overflow: auto;
+
+            mat-accordion {
+
+                .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover {
+                    background: #fff2f2;
+                }
+
+                .mat-expansion-panel-header.mat-expanded:focus,
+                .mat-expansion-panel-header.mat-expanded:hover {
+                    background: #fff2f2;
+                }
+
+                mat-expansion-panel {
+                    box-shadow: none;
+                    background: #FFF2F2;
+                    margin: 0px;
+                    margin-bottom: 12px;
+                    border-radius: 4px;
+
+                    .mat-expansion-panel-content {
+                        .mat-expansion-panel-body {
+                            padding: 0px 12px 10px;
+
+                            .accordian_content_table.position_Upload_table {
+                                height: auto;
+
+                                table {
+                                    border-left: 1px solid #ddddde;
+                                    border-spacing: 0;
+                                    width: 100%;
+                                    border-collapse: separate;
+                                    background: none;
+
+                                    thead {
+                                        background: #ddddde;
+                                        position: sticky;
+                                        top: 0px;
+                                        z-index: 9;
+
+                                        tr {
+                                            height: auto;
+
+                                            th.text-center {
+                                                text-align: center !important;
+
+                                                .mat-sort-header-container {
+                                                    justify-content: center;
+                                                }
+                                            }
+
+                                            th {
+                                                border-top: 1px solid #ddddde;
+                                                border-bottom: 1px solid #ddddde;
+                                                border-right: 1px solid #ddddde;
+                                                text-align: left;
+                                                font-family: $fontFamily;
+                                                min-height: 28px;
+                                                line-height: 14px;
+                                                   background-color: #eeeeee;
+                                                color: #3D3D3D;
+                                                font-weight: 600;
+                                                font-size: 12px;
+                                                padding: 8px 8px;
+                                                white-space: nowrap;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+                                                // text-transform: uppercase;
+
+                                                // background-color: #ffffff;
+                                            }
+                                        }
+                                    }
+
+                                    tbody {
+                                        tr:hover {
+                                            td {
+                                                background: #fff6f6;
+                                            }
+                                        }
+
+                                        tr {
+                                            height: auto;
+
+                                            td {
+                                                border-right: 1px solid #ddddde;
+                                                border-bottom: 1px solid #ddddde;
+                                                text-align: left;
+                                                font-family: $fontFamily;
+                                                padding: 4px 8px;
+                                                color: #000000DE;
+                                                font-weight: 400;
+                                                font-size: 11px;
+                                                line-height: 14px;
+                                                white-space: nowrap;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;
+
+                                                .box_data {
+                                                    background: #E9E9E9;
+                                                    border-radius: 4px;
+                                                    padding: 4px 5px;
+                                                    font-weight: 600;
+                                                }
+
+                                                .Comments {
+                                                    display: block;
+                                                    white-space: normal;
+                                                    word-break: break-word;
+                                                    overflow-wrap: anywhere;
+                                                }
+
+                                                .action {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    gap: 5px;
+
+                                                    a.approved {
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        display: flex;
+                                                        line-height: 20px;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        background: #52ac66;
+                                                        color: #fff;
+                                                        border-radius: 50px;
+                                                        font-weight: 500;
+                                                        font-size: 13px;
+                                                        font-family: $fontFamily;
+                                                    }
+
+                                                    a.manual {
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        display: flex;
+                                                        line-height: 20px;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        background: #FF9800;
+                                                        color: #fff;
+                                                        border-radius: 50px;
+                                                        font-weight: 500;
+                                                        font-size: 13px;
+                                                        font-family: $fontFamily;
+                                                    }
+
+                                                    a {
+                                                        line-height: 0;
+                                                        text-decoration: none;
+                                                        color: #545454de;
+
+                                                        mat-icon {
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            font-size: 20px;
+                                                        }
+                                                    }
+                                                }
+
+
+                                                .status {
+                                                    display: flex;
+                                                    align-items: center;
+                                                    gap: 4px;
+                                                    justify-self: center;
+
+                                                    mat-radio-group {
+                                                        display: flex;
+                                                        gap: 22px;
+
+                                                        mat-radio-button {
+                                                            .mdc-form-field {
+                                                                .mdc-radio {
+                                                                    padding: 0px !important;
+
+                                                                }
+
+                                                                label.mdc-label {
+                                                                    font-size: 11px;
+                                                                    font-family: $fontFamily;
+                                                                    color: rgba(0, 0, 0, 0.8705882353);
+                                                                    padding-left: 10px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .mat-expansion-panel-header {
+                        padding: 0 12px;
+                        height: 40px;
+
+                        span.mat-expansion-indicator {
+                            display: none;
+                        }
+
+                        .mat-content {
+                            .mat-expansion-panel-header-title {
+                                color: #413C3C;
+                                font-size: 16px;
+                                font-family: $fontFamily;
+                                font-weight: 500;
+                                width: 18px;
+                                flex-grow: 7;
+
+                                img {
+                                    width: 20px;
+                                    margin-right: 7px;
+                                }
+                            }
+
+                            .mat-expansion-panel-header-description {
+                                font-family: $fontFamily;
+                                color: #000000DE;
+                                font-size: 14px;
+
+                                img {
+                                    width: 18px;
+                                    margin-right: 6px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.invoice_validation_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #FFF6F6;
+
+    .left {
+        p {
+            margin: 0px;
+            color: #6E6E6E;
+            font-size: 14px;
+            font-family: $fontFamily;
+            font-weight: 300;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        button.common_btn {
+            background: none;
+            color: $bgcolor;
+            padding: 10px 20px;
+            font-family: $fontFamily;
+            border: 1px solid #8B8585;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    }
+}
+
+.page_heading {
+    padding: 4px 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    a {
+        line-height: normal;
+
+        img {
+            width: 30px;
+        }
+    }
+
+    h3 {
+        margin: 0px;
+        font-size: 20px;
+        font-family: $fontFamily;
+        font-weight: 600;
+        color: #161616;
+        line-height: normal;
+    }
+}
+
+section.debt_position_modules {
+    .debt_position_Upload {
+        border: 0px solid #ddd8d8;
+        background: #fff;
+        padding: 0px 8px 6px;
+           border-radius: 6px;
+        // background: #fff;
+        // height: calc(100vh - 110px);
+        // border-radius: 10px;
+        // box-shadow: 0 3px 9px 0 rgba(169, 184, 200, 0.15);
+
+        .dashboard_tab {
+
+            // background: #FFF6F6;
+            // padding: 15px 5px;
+            .mat-mdc-tab-body-content {
+                overflow: hidden !important;
+            }
+        }
+
+        .Consolidated_Bank_common_tab.Daily_Re_upload_Approval {
+            mat-tab-group {
+                .mat-mdc-tab-body-content {
+                    overflow: hidden;
+                }
+            }
+        }
+
+        .debt_position_Upload_filter {
+            border-bottom: 0px solid #F59696;
+            padding: 8px 0px;
+
+            .reupload_approval_daily_filter {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .filter_box {
+                    .total_record_data {
+                        p {
+                            margin: 0px;
+                            font-size: 11px;
+                            font-style: italic;
+                            font-weight: 700;
+                            color: $bgcolor;
+                            font-family: $fontFamily;
+                        }
+                    }
+
+                    .application_field {
+                        line-height: 0;
+
+                        mat-radio-group {
+                            display: flex;
+                            gap: 12px;
+                        }
+
+                        .mdc-radio {
+                            padding-left: 0px !important;
+                        }
+
+                        textarea {
+                            background: #fff;
+                            border: 1px solid #d3d3d3;
+                            border-radius: 5px;
+                            height: 29px;
+                            padding: 0px 10px;
+                            font-weight: 400;
+                            font-size: 11px;
+                            font-family: $fontFamily;
+                            line-height: 26px;
+                            color: #000000;
+                            width: 100%;
+                            resize: none;
+
+                            &:focus-visible {
+                                outline: -webkit-focus-ring-color auto 0px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .consolidated_debt_position_count {
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                gap: 10px;
+
+                .line {
+                    height: 15px;
+                    width: 2px;
+                    background-color: #a1a1a1;
+                }
+
+                .consolid_total {
+                    padding: 4px 5px;
+                    border-radius: 5px;
+
+                    p {
+                        margin: 0px;
+                        text-align: center;
+                        color: #141414;
+                        font-family: $fontFamily;
+                        font-size: 12px;
+                        font-weight: 500;
+
+                        span {
+                            font-size: 13px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+            .common_btn {
+                display: flex;
+                gap: 10px;
+                height: 32px;
+                align-items: center;
+
+                p {
+                    margin: 0px;
+                    font-weight: 500;
+                    color: #141414;
+                    font-size: 12px;
+                    font-family: $fontFamily;
+                    line-height: 14px;
+                }
+
+                button {
+                    background: $bgcolor !important;
+
+                    // &:hover {
+                    //     background: $bgcolor !important;
+                    // }
+                }
+
+                button.reset {
+                    background: #858585 !important;
+                    display: none;
+
+                    &:hover {
+                        background: #6a6a6a !important;
+                    }
+                }
+
+            }
+
+            .application_field.total_button {
+                background: #0070C0;
+                text-align: center;
+                padding: 12px 0px;
+                border-radius: 5px;
+                transition: all 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-1px);
+                }
+
+                p {
+                    margin: 0px;
+                    font-size: 12px;
+                    font-family: $fontFamily;
+                    color: #fff;
+                    font-weight: $fontWeight7;
+                }
+            }
+
+            .application_field.close_date_picker {
+                display: flex;
+                align-items: flex-end;
+                gap: 5px;
+
+                .date_picker {
+                    width: 100%;
+                }
+
+                .date {
+                    mat-datepicker-toggle {
+                        right: 45px;
+                    }
+                }
+
+                .close_icon {
+                    line-height: 0px;
+                    width: 20px;
+
+                    a {
+                        color: #ff4343;
+                        text-decoration: none;
+
+                        mat-icon {
+                            font-size: 20px;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+
+            .notes {
+                p {
+                    margin: 0px;
+                    font-style: italic;
+                    font-size: 11px;
+                    padding-left: 0;
+                    text-align: left;
+                    line-height: normal;
+                    font-family: $fontFamily;
+                    color: #000000;
+                }
+            }
+
+            .application_field {
+                label {
+                    font-weight: $fontWeight5;
+                    font-size: 12px;
+                    padding-left: 0;
+                    line-height: normal;
+                    font-family: $fontFamily;
+                    color: #000000;
+                    width: 100%;
+                    display: block;
+                    margin-bottom: 4px;
+
+                    span {
+                        color: red;
+                    }
+
+                    abbr {
+                        font-size: 11px;
+                        color: #595959;
+                        font-style: italic;
+                    }
+                }
+
+                .date {
+                    mat-date-range-input {
+                        background: #fff;
+                        border: 1px solid #c5c5c5;
+                        border-radius: 5px;
+                        height: 32px;
+                        padding: 0px 10px;
+                        font-weight: $fontWeight4;
+                        font-size: $font11;
+                        font-family: $fontFamily;
+                        line-height: 32px;
+                        color: #000000;
+                        width: 100%;
+
+                        input {
+                            border: 0px solid #c5c5c5;
+                            height: 30px;
+                            padding: 0px;
+                        }
+                    }
+
+                    .Date_Criteria {
+                        position: static;
+                        background: #fff;
+                        border: 1px solid #d3d3d3;
+                        border-radius: 5px;
+                        height: 26px;
+                        padding: 0px 10px;
+                        font-weight: 400;
+                        font-size: 11px;
+                        font-family: $fontFamily;
+                        line-height: 26px;
+                        color: #000000;
+                        width: 100%;
+
+                        .mat-date-range-input-container {
+                            span.mat-date-range-input-separator {
+                                margin-right: 15px !important;
+                            }
+
+                            .mat-date-range-input-wrapper {
+                                width: 80px;
+
+                            }
+
+                            input {
+                                border: 0px solid #d3d3d3;
+                                height: 24px;
+                                padding: 0px;
+                            }
+                        }
+
+                    }
+
+                    mat-datepicker-toggle {
+                        position: absolute;
+                        right: 4px;
+                        bottom: 7px;
+                        width: 20px;
+                        height: 20px;
+
+                        button {
+                            padding: 0px;
+                            height: 20px;
+                            width: 17px;
+
+                            svg {
+                                width: 17px !important;
+                            }
+                        }
+                    }
+                }
+
+                input {
+                    background: #fff;
+                    border: 1px solid #c5c5c5;
+                    border-radius: 5px;
+                    height: 32px;
+                    padding: 0px 10px;
+                    font-weight: $fontWeight4;
+                    font-size: $font11;
+                    font-family: $fontFamily;
+                    line-height: 32px;
+                    color: #000000;
+                    width: 100%;
+
+                    &::-webkit-input-placeholder {
+                        color: #414042;
+                    }
+
+                    &:focus-visible {
+                        outline: none;
+                    }
+                }
+
+                mat-select {
+                    background: #fff;
+                    border: 1px solid #c5c5c5;
+                    border-radius: 5px;
+                    height: 32px;
+                    font-weight: $fontWeight4;
+                    font-size: $font11;
+                    font-family: $fontFamily;
+                    line-height: 30px;
+                    color: #000000;
+                    width: 100%;
+
+                    .mat-mdc-select-trigger {
+                        padding: 0px 10px;
+
+                        .mat-mdc-select-placeholder {
+                            color: #414042;
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+        .showing_row {
+            p {
+                margin: 0px;
+                font-size: 12px;
+                font-family: $fontFamily;
+                color: #ABACBE;
+                margin-top: 8px;
+
+                b {
+                    color: #000000DE;
+                }
+            }
+        }
+
+        .position_Upload_table {
+            height: calc(100vh - 215px);
+            overflow: auto;
+
+
+            ag-grid-angular {
+
+                .ag-row-selected::before {
+                    // background-color: #fff6f6;
+                }
+
+
+
+                // .ag-row-hover:not(.ag-full-width-row)::before,
+                // .ag-row-hover.ag-full-width-row.ag-row-group::before {
+                //     background-color: #fff6f6;
+                // }
+
+                .ag-ltr .ag-cell-focus:not(.ag-cell-range-selected):focus-within,
+                .ag-ltr .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+                .ag-ltr .ag-full-width-row.ag-row-focus:focus .ag-cell-wrapper.ag-row-group,
+                .ag-ltr .ag-cell-range-single-cell,
+                .ag-ltr .ag-cell-range-single-cell.ag-cell-range-handle,
+                .ag-rtl .ag-cell-focus:not(.ag-cell-range-selected):focus-within,
+                .ag-rtl .ag-context-menu-open .ag-cell-focus:not(.ag-cell-range-selected),
+                .ag-rtl .ag-full-width-row.ag-row-focus:focus .ag-cell-wrapper.ag-row-group,
+                .ag-rtl .ag-cell-range-single-cell,
+                .ag-rtl .ag-cell-range-single-cell.ag-cell-range-handle {
+                    border-color: var(--ag-range-selection-border-color) !important;
+                }
+
+                .ag-overlay-no-rows-wrapper {
+                    border: 1px solid #ddddde;
+                    border-radius: 0px;
+                    padding: 20px;
+                    border-radius: 0px 0px 5px 5px;
+                }
+
+                .ag-root-wrapper.ag-layout-normal {
+                    border-radius: 0px !important;
+
+                    .ag-root-wrapper-body.ag-layout-normal {
+                        .ag-root.ag-layout-normal {
+                            .ag-header {
+                                .headercenter {
+
+                                    .ag-header-cell-label {
+                                        justify-content: center;
+                                    }
+                                }
+
+                                .ag-header-cell {
+                                    background: #eeeeee;
+                                    font-size: 12px;
+                                    padding: 3px 8px;
+                                    color: #323232;
+                                    font-family: $fontFamily;
+
+                                    .ag-cell-label-container {
+                                        padding: 0px 0px;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        .ag-body.ag-layout-normal {
+                            .ag-body-viewport {
+                                .ag-center-cols-viewport {
+                                    .ag-center-cols-container {
+                                        .ag-cell {
+                                            font-size: 11px;
+                                            color: rgba(0, 0, 0, 0.8705882353);
+                                            font-family: $fontFamily;
+                                            padding: 0px 8px;
+                                            border-right: 1px solid #ddddde
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .ag-ltr .ag-cell {
+                            border-right-width: 0px;
+                            border: 1px solid #ddddde !important;
+                        }
+                    }
+                }
+            }
+
+            table {
+                border-left: 1px solid #ddddde;
+                border-spacing: 0;
+                width: 100%;
+                border-collapse: separate;
+                background: #fff;
+
+
+                thead {
+                    background: #ddddde;
+                    position: sticky;
+                    top: 0px;
+                    z-index: 9;
+
+                    tr {
+                        height: auto;
+
+
+                        th {
+                            border-top: 1px solid #ddddde;
+                            border-bottom: 1px solid #ddddde;
+                            border-right: 1px solid #ddddde;
+                            text-align: left;
+                            font-family: $fontFamily;
+                            min-height: 28px;
+                            line-height: 14px;
+                            background-color: #FAEBEB;
+                            color: #3D3D3D;
+                            font-weight: 600;
+                            font-size: 12px;
+                            padding: 8px 8px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            // text-transform: uppercase;
+                        }
+                    }
+                }
+
+                tbody {
+
+                    tr:hover {
+                        td {
+                            background: #fff6f6;
+                        }
+                    }
+
+                    tr {
+                        height: auto;
+
+                        td {
+                            border-right: 1px solid #ddddde;
+                            border-bottom: 1px solid #ddddde;
+                            text-align: left;
+                            font-family: $fontFamily;
+                            padding: 4px 8px;
+                            color: #000000DE;
+                            font-weight: 400;
+                            font-size: 11px;
+                            line-height: 14px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+
+                            .action {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 5px;
+
+                                a {
+                                    line-height: 0;
+                                    text-decoration: none;
+                                    color: #545454de;
+
+                                    mat-icon {
+                                        width: 20px;
+                                        height: 20px;
+                                        font-size: 20px;
+                                    }
+                                }
+                            }
+
+
+                            .status {
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+
+                                img {
+                                    width: 16px;
+                                }
+                            }
+
+                            .Invoice_Name,
+                            .Comments {
+                                display: block;
+                                white-space: normal;
+                                word-break: break-word;
+                                overflow-wrap: anywhere;
+                            }
+
+                            .box_data {
+                                background: #E9E9E9;
+                                border-radius: 4px;
+                                padding: 4px 5px;
+                            }
+
+
+
+                            .No_data_available {
+                                height: calc(100vh - 225px);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+                        }
+                    }
+                }
+
+                tfoot {
+                    position: sticky;
+                    bottom: 0px;
+                    background: #717171;
+                    z-index: 4;
+
+                    tr {
+                        td {
+                            border-right: 1px solid #ddddde;
+                            border-bottom: 1px solid #ddddde;
+                            border-top: 0px solid #E2E2E2;
+                            text-align: left;
+                            font-family: $fontFamily;
+                            padding: 3px 5px;
+                            color: #282828;
+                            font-weight: 600;
+                            font-size: 13px;
+                            line-height: 14px;
+                            white-space: pre-wrap;
+                            word-break: break-word;
+
+                            p {
+                                margin: 0px;
+                            }
+
+                            .Number {
+                                text-align: right;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+// ========Section Code End==========
+
+
+.mat_paginator {
+    padding-top: 2px;
+
+    mat-paginator {
+        .mat-mdc-paginator-container {
+            height: 20px;
+            min-height: 20px !important;
+            font-size: 11px !important;
+
+            .mat-mdc-form-field {
+                height: 20px;
+                min-height: 20px;
+                line-height: 20px;
+
+                .mat-mdc-text-field-wrapper {
+                    width: 100%;
+                    height: 20px;
+                    line-height: 20px;
+                    min-height: 20px;
+
+                    .mat-mdc-form-field-flex {
+                        display: inline-flex;
+                        align-items: center;
+                        box-sizing: border-box;
+                        width: 100%;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        .mat-mdc-paginator-range-actions {
+            button {
+                padding: 0px;
+                height: 20px;
+                min-height: 20px;
+            }
+        }
+    }
+}
+.records{
+    font-style: italic;
+       font-size: 11px !important;
+    color: $bgcolor !important;
+}
+
+
+
+
+@media (max-width: 1366.98px) {}
+
+
+@media (max-width: 1280.98px) {
+section.debt_position_modules .debt_position_Upload .debt_position_Upload_filter .application_field label {
+    font-weight: 500;
+    font-size: 10px;
+}
+
+
+}
+
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 991.98px) {}
+
+
+
+
+@media (max-width: 767.98px) {}
+
+@media (max-width: 575.98px) {}
+
+
+
+@media (max-width: 555.98px) {}

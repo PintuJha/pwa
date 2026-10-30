@@ -1,0 +1,18 @@
+<div class="add_language_model" cdkDrag cdkDragRootElement=".cdk-overlay-pane" cdkDragBoundary=".cdk-overlay-container">
+    <div class="custom_model">
+      <div class="heading" cdkDragHandle style="cursor: move;">
+        <h3> {{sessionExpiryDialogLabels.sessionExpiry | dictionaryValidatorPipe}} </h3>
+      </div>
+      <div class="content">
+        <div class="aditional_lan">
+          <h1 class="sessiontext"> {{sessionExpiryDialogLabels.sessionWillExpireIn | dictionaryValidatorPipe}} <br><b>{{ remainingTime }}</b></h1>
+        </div>
+      </div>
+      <mat-dialog-actions align="end">
+        <div class="login_btn  mt-0">
+          <button class="ml-0" mat-raised-button color="primary" (click)="onContinue()"> {{sessionExpiryDialogLabels.continue | dictionaryValidatorPipe}} </button>
+          <button class="ml-0" mat-raised-button color="primary" (click)="onLogout()"> {{sessionExpiryDialogLabels.logout | dictionaryValidatorPipe}} </button>
+        </div>
+      </mat-dialog-actions>
+    </div>
+  </div>

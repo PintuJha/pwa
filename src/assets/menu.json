@@ -1,0 +1,86 @@
+[
+    {
+        "resourceId": 1,
+        "resourceName": "APS Menu",
+        "labelLink": null,
+        "toolTipName": "Manage Users",
+        "iconCode": "group",
+        "iconFileValue": null,
+        "children": [
+            {
+                "resourceId": 11,
+                "resourceName": "Workflow Bench",
+                "labelLink": "/workflow-bench",
+                "toolTipName": "Workflow Bench",
+                "iconCode": "list",
+                "iconFileValue": null
+            },
+            {
+                "resourceId": 12,
+                "resourceName": "Processed Docs Bench",
+                "labelLink": "/processed-docs-bench",
+                "toolTipName": "Processed Docs Bench",
+                "iconCode": "person_add",
+                "iconFileValue": null
+            },
+            {
+                "resourceId": 13,
+                "resourceName": "Erroneous Queue",
+                "labelLink": "/erroneous-queue",
+                "toolTipName": "Erroneous Queue",
+                "iconCode": "person_add",
+                "iconFileValue": null
+            },
+            {
+                "resourceId": 14,
+                "resourceName": "Approve Request",
+                "labelLink": "/approve-request",
+                "toolTipName": "Approve Request",
+                "iconCode": "person_add",
+                "iconFileValue": null
+            }
+        ]
+    },
+    {
+        "resourceId": 2,
+        "resourceName": "Dashboard",
+        "labelLink": "/dashboard",
+        "toolTipName": "Go to Dashboard",
+        "iconCode": "dashboard",
+        "iconFileValue": null,
+        "children": [
+            {
+                "resourceId": 21,
+                "resourceName": "Create Employee",
+                "labelLink": "/create-employee",
+                "toolTipName": "Create Employee",
+                "iconCode": "list",
+                "iconFileValue": null
+            },
+            {
+                "resourceId": 22,
+                "resourceName": "Employee List",
+                "labelLink": "/employee-list",
+                "toolTipName": "EmployeeList",
+                "iconCode": "person_add",
+                "iconFileValue": null
+            },
+            {
+                "resourceId": 23,
+                "resourceName": "Update Employee",
+                "labelLink": "/update-employee",
+                "toolTipName": "Update Employee",
+                "iconCode": "person_add",
+                "iconFileValue": null
+            },
+            {
+                "resourceId": 24,
+                "resourceName": "Employee Details",
+                "labelLink": "/employee-details",
+                "toolTipName": "Employee Details",
+                "iconCode": "person_add",
+                "iconFileValue": null
+            }
+        ]
+    }
+]

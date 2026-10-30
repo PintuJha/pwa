@@ -1,0 +1,144 @@
+<div class="add_language_model common_sec" cdkDrag cdkDragRootElement=".cdk-overlay-pane"
+    cdkDragBoundary=".cdk-overlay-container">
+    <div class="custom_model menu_master_tab">
+        <div class="heading" cdkDragHandle style="cursor: move;">
+            <h3>Version</h3>
+        </div>
+        <div
+            class="content add_release_version_model Consolidated_Bank_common_tab Consolidated_Bank_Wise_Division_Breakdown">
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" animationDuration="0ms"
+                (selectedTabChange)="tabChanged($event)">
+                <mat-tab [label]="labelAndButtonValue?.latestRelease |dictionaryValidatorPipe">
+                    <div class="current_release_tab rich_editor_box" style="height: calc(100vh - 188px);">
+                        <div class="list">
+                            <div class="header">
+                                <div class="data">
+                                    <p><b>{{labelAndButtonValue?.version |dictionaryValidatorPipe }}:</b>
+                                        {{currentData?.versionNo}}</p>
+                                </div>
+                                <div class="data">
+                                    <p><b>{{labelAndButtonValue?.versionType |dictionaryValidatorPipe }}:</b>
+                                        {{currentData?.versionTypeDescp}}</p>
+                                </div>
+                                <div class="data">
+                                    <p><b>{{labelAndButtonValue?.releaseDate |dictionaryValidatorPipe }}:</b>
+                                        {{currentData?.releaseStamp | date: 'dd-MMM-yyyy'
+                                        }}</p>
+                                </div>
+                            </div>
+                            <div class="content_data mt-1">
+                                <div class="html_editor_model html_editor_text">
+                                    <div id="scrollableDiv1" class="scrollable-div1" style="text-align: left;"
+                                        [innerHTML]="currentDesc">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+                @if(data !=='current'){
+                <mat-tab [label]="labelAndButtonValue?.history | dictionaryValidatorPipe">
+                    <div class="current_release_tab rich_editor_box">
+                        <div class="use_password_char language_com mb-2">
+                            <form [formGroup]="searchForm">
+                                <div class="row align-items-end" style="width: 100%;">
+                                    <div class="col-md-4">
+
+                                        <div class="search_filter">
+                                            <label for="searchedText">{{labelAndButtonValue?.search
+                                                |dictionaryValidatorPipe }}</label>
+                                            <input type="text" class="search"
+                                                [placeholder]="labelAndButtonValue?.searchHistoryCategory|dictionaryValidatorPipe"
+                                                formControlName="searchedText">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="search_filter">
+                                            <label for="picker4">{{labelAndButtonValue?.releaseDate
+                                                |dictionaryValidatorPipe
+                                                }}</label>
+                                            <div class="date_picker">
+                                                <input class="search" matInput [matDatepicker]="picker3">
+                                                <mat-datepicker-toggle matIconSuffix
+                                                    [for]="picker3"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker3></mat-datepicker>
+                                                <mat-date-range-input [rangePicker]="picker4">
+                                                    <input formControlName="startDate" readonly matStartDate>
+                                                    <input formControlName="endDate" readonly matEndDate>
+                                                </mat-date-range-input>
+                                                <mat-datepicker-toggle matIconSuffix
+                                                    [for]="picker4"></mat-datepicker-toggle>
+                                                <mat-date-range-picker #picker4 color="warn"></mat-date-range-picker>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="login_btn mt-0 justify-content-end mr-0">
+                                            <button mat-raised-button color="primary"
+                                                (click)="searchRecord()">{{labelAndButtonValue?.search
+                                                |dictionaryValidatorPipe }}</button>
+                                            <button mat-raised-button color="primary"
+                                                (click)="reset()">{{labelAndButtonValue?.reset |dictionaryValidatorPipe
+                                                }}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        @if(totalRecords > 0){
+                        <div class="histroy_rich_editor">
+                            <div *ngFor="let data of historyData; let in = index" class="list">
+                                <div class="header">
+                                    <div class="data">
+                                        <p><b>{{labelAndButtonValue?.version |dictionaryValidatorPipe }}:</b>
+                                            {{data?.versionNo}}</p>
+                                    </div>
+                                    <div class="data">
+                                        <p><b>{{labelAndButtonValue?.versionType |dictionaryValidatorPipe }}:</b>
+                                            {{data?.versionTypeDescp}}</p>
+                                    </div>
+                                    <div class="data">
+                                        <p><b>{{labelAndButtonValue?.releaseDate |dictionaryValidatorPipe }}:</b>
+                                            {{data?.releaseStamp | date: 'dd-MMM-yyyy'}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="content_data mt-1">
+                                    <div class="html_editor_model html_editor_text">
+                                        <div id="scrollableDiv" class="scrollable-div"
+                                            [innerHTML]="historyDesc[in]?.description">
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        }@else {
+                        <div class="emptyRecord">
+                            {{labelAndButtonValue.noRecordFound |dictionaryValidatorPipe}}
+                        </div>
+                        }
+
+
+                    </div>
+                    <div class="mat_paginator release_mat_pag">
+                        <mat-paginator [length]="totalRecords" [pageSizeOptions]="[50,100,150]"
+                            (page)="onPageChange($event)" showFirstLastButtons>
+                        </mat-paginator>
+                        <p class="mb-0 page_count">page {{pageNumber + ' of '+ totalPages}}</p>
+                    </div>
+                </mat-tab>
+                }
+            </mat-tab-group>
+        </div>
+
+        <mat-dialog-actions align="end">
+            <div class="login_btn  mt-0">
+                <button class="ml-0" mat-raised-button color="primary" mat-dialog-close
+                    (click)="close()">{{labelAndButtonValue.close |dictionaryValidatorPipe }}</button>
+            </div>
+        </mat-dialog-actions>
+    </div>
+</div>

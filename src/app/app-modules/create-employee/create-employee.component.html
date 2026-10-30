@@ -1,0 +1,31 @@
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+
+
+<div class="breadcrum">
+    <ul>
+        <li><b>Dashboard</b></li>
+        <li>
+            <img alt="breadcrum_right" width="14px" src="../../../assets/img/breadcrum_right.svg" />
+        </li>
+        <li>Create Employee</li>
+    </ul>
+</div>
+
+<section class="pt-0 pb-0 debt_position_modules">
+    <div class="container-fluid">
+        <div class="debt_position_Upload">
+            <div class="dashboard_tab pt-2">
+                <div class="Inbox_tab_content">
+                    <div class="position_Upload_table mt-0" style="height: auto;">
+                        <ag-grid-angular id="ocrverification" #ocrverification
+                            style="width: 100%;height: calc(100vh - 219px);" [class]="themeClass" [headerHeight]="31"
+                            [rowHeight]="28" [pagination]="true" [suppressRowClickSelection]="true" [animateRows]="true"
+                            [rowData]="rowData" [columnDefs]="colDefs" [gridOptions]="gridOptions"></ag-grid-angular>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

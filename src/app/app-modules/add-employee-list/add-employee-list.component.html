@@ -1,0 +1,64 @@
+<meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="pragma" content="no-cache" />
+
+
+<div class="breadcrum">
+    <ul>
+        <li><b><a routerLink="/employee-list">Employee</a></b></li>
+        <li>
+            <img alt="breadcrum_right" width="14px" src="../../../assets/img/breadcrum_right.svg" />
+        </li>
+        <li>Add Employee Listt</li>
+    </ul>
+</div>
+
+
+<section class="pt-0 pb-0 debt_position_modules">
+    <div class="container-fluid">
+        <div class="debt_position_Upload">
+
+            <div class="debt_position_Upload_filter custom_filter" style="width: 50%; margin: 0px auto;">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="row align-items-end">
+
+                        <div class="col-md-12 pr-0 mb-3">
+                            <div class="application_field">
+                                <label for="searchText">First Name</label>
+                                <input [(ngModel)]="employee.firstName" name="firstName" type="text"  placeholder="Enter First Name">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 pr-0 mb-3">
+                            <div class="application_field">
+                                <label for="searchText">Last Name</label>
+                                <input [(ngModel)]="employee.lastName" name="lastName" type="text"  placeholder="Enter Last Name">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 pr-0 mb-3">
+                            <div class="application_field">
+                                <label for="searchText">Email Id</label>
+                                <input [(ngModel)]="employee.emailId" name="emailId" type="text"  placeholder="Enter Email Id">
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <div class="common_btn justify-content-start">
+                                <button mat-raised-button color="primary" type="submit">Save</button>
+                               
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+
+
+        
+
+        </div>
+    </div>
+</section>
